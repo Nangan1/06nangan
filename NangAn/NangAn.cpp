@@ -2,36 +2,66 @@
 #include <iostream>
 using namespace std;
 
+void out (int a)
+{
+	cout << a;
+}
+
+void qw(int a, int b)
+{
+	out(a + b);
+}
+
+void qwe (int a, int b)
+{
+	out(a - b);
+}
+
+void qwer(int a, int b)
+{
+	out(a * b);
+}
+
+void qwq (int a, int b)
+{
+	out(a / b);
+}
+
+void qwqw (int a, int b)
+{
+	out(a % b);
+}
+
+void asdf(int a, int b, char c)
+{
+	switch (c) {
+	case '+':
+		qw(a, b);
+		break;
+	case '-':
+		qwe(a, b);
+		break;
+	case '*':
+		qwer(a, b);
+		break;
+	case '/':
+		qwq(a, b);
+		break;
+	case '%':
+		qwqw(a, b);
+		break;
+	}
+}
+
 int main()
 {
-	char a[3];
-	int b;
+	int a, b;
+	char c;
 
 	do {
-		cin >> a[0];
-		cin >> a[1];
-		cin >> a[2];
-
-		switch (a[1]) {
-		case '+': 
-			b = (a[0] - 48) + (a[2] - 48);
-			cout << b;
-			break;
-		case '-':
-			b = (a[0] - 48) - (a[2] - 48);
-			cout << b;
-			break;
-		case '*':
-			b = (a[0] - 48) * (a[2] - 48);
-			cout << b;
-			break;
-		case '/':
-			b = (a[0] - 48) / (a[2] - 48);
-			cout << b;
-			break;
-		default:
-			return 0;
-		}
-	} while ('e' != a[0] && 'e' != a[1] && 'e' != a[2]);
+		cin >> a >> c >> b;
+		asdf (a, b, c);
+		
+	} while ('e' != c);
 	return 0;
 }
